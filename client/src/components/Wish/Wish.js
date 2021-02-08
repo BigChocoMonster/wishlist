@@ -1,24 +1,31 @@
-import "./Wish.css";
+import { Budget, Description, Links, Title, WishBox } from "./styles";
 import PropTypes from "prop-types";
 
 export default function Wish(props) {
   const { title, desc, budget, weblinks, isAcquired } = props.details;
 
   return (
-    <div className="wish">
-      <div className="title">{title}</div>
-      <div className="desc">{desc}</div>
-      <div className="budget">
-        <span>From: {budget?.from}</span>
-        <span>To: {budget?.to}</span>
-      </div>
-      <div className="weblinks">
+    <WishBox>
+      <Title>{title}</Title>
+      <Description>{desc}</Description>
+      <Budget>
+        <p>Price Range</p>
+        {budget?.currency}
+        {budget?.from} - {budget?.currency}
+        {budget?.to}
+      </Budget>
+      <Links>
+        <p>Inspirations</p>
         {(weblinks ?? []).map((link, index) => (
-          <u key={index}>{link}</u>
+          <div>
+            <a href={link} target="_blank" key={index}>
+              {link}
+            </a>
+          </div>
         ))}
-      </div>
+      </Links>
       <div className="acquired">{isAcquired}</div>
-    </div>
+    </WishBox>
   );
 }
 
@@ -29,6 +36,7 @@ Wish.propTypes = {
     budget: PropTypes.shape({
       from: PropTypes.number.isRequired,
       to: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
     }),
     weblinks: PropTypes.arrayOf(PropTypes.string.isRequired),
     isAcquired: PropTypes.bool,

@@ -16,7 +16,7 @@ const typeDefs = gql`
   type BudgetRange {
     from: Int!
     to: Int!
-    amount: String!
+    currency: String!
   }
 `;
 

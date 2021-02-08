@@ -9,7 +9,7 @@ export const getAllWishes = gql`
       budget {
         from
         to
-        amount
+        currency
       }
       weblinks
     }

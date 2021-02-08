@@ -6,8 +6,8 @@ const mocks = {
       new MockList(10, () => ({
         title: "Sofa",
         desc: "Like the one back at Kolkata",
-        budget: { from: 10000, to: 20000 },
-        weblinks: ["google.com"],
+        budget: { from: 10000, to: 20000, currency: "₹" },
+        weblinks: ["https://www.google.com", "https://www.google.com"],
         isAcquired: false,
       })),
   }),

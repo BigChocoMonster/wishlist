@@ -1,4 +1,3 @@
-import "./App.css";
 import { useQuery } from "@apollo/client";
 import { getAllWishes } from "./queries";
 import Wish from "./components/Wish/Wish";
@@ -28,7 +27,8 @@ export default function App() {
 
 const WishList = styled.div`
   display: grid;
-  padding: 60px 40px;
   grid-gap: 30px;
+  padding: 60px 40px;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, 300px);
 `;
