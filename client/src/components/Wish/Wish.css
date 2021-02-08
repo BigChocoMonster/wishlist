@@ -1,0 +1,9 @@
+.wish {
+  padding: 10px;
+  border-radius: 4px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+.wish:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+}
